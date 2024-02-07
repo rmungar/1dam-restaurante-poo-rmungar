@@ -1,5 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/eRdVeHAa)
-## El Restaurante con POO
+## El src.Restaurante con POO
 
 ### Bloque 1: Gestión de Platos y Pedidos
 
@@ -41,7 +41,7 @@
   - `calcularTiempo()`: Calcula el tiempo total de preparación sumando el tiempo de preparación de cada plato.
   - `toString()`: Retornar la información del pedido utilizando el número de mesa, el método toString() de cada plato y su estado. (por ejemplo, "Hamburguesa (8 min.) -> 8.99€ (carne, huevo, queso, pan y tomate)")
 
-### Bloque 2: Gestión de Mesas y Sistema de Gestión de Restaurante
+### Bloque 2: Gestión de Mesas y Sistema de Gestión de src.Restaurante
 
 #### 3. Clase Mesa
 - **Responsabilidades:**
@@ -59,7 +59,7 @@
   - `liberarMesa()`: Cambia el estado de la mesa a "libre".
   - `agregarPedido(Pedido)`: Agrega un pedido a los pedidos de la mesa.
 
-#### 4. Sistema de Gestión de Restaurante
+#### 4. Sistema de Gestión de src.Restaurante
 - **Responsabilidades:**
   - Integrar y gestionar las operaciones del restaurante.
 
