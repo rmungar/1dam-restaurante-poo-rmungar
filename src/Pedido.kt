@@ -32,6 +32,6 @@ class Pedido{
     }
 
     override fun toString(): String {
-        return "Pedido - $numeroPedido ; Estado : $estado"
+        return "Pedido - $numeroPedido ; Estado : $estado" + "\n${platos.joinToString("\n")}"
     }
 }

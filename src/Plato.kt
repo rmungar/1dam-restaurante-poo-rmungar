@@ -34,7 +34,7 @@ class Plato(nombre:String, precio:Double, tiempoPreparacion: Int, val ingredient
 
         return "$nombre ($tiempoPreparacion) -> ${precio}€ (${
             if (ingredientes.size > 1) {
-                ingredientes.dropLast(1).joinToString { ", " } + " y " + ingredientes.last()
+                ingredientes.dropLast(1).joinToString( ", " ) + " y " + ingredientes.last()
             } else {
                 ingredientes.joinToString(", ")
             }
