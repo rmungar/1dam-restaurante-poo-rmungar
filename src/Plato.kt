@@ -1,6 +1,6 @@
 package src
 
-class Plato(nombre:String, precio:Double, tiempoPreparacion: Int, val ingredientes: List<String>) {
+class Plato(nombre:String, precio:Double, tiempoPreparacion: Int, val ingredientes: MutableList<String>) {
     init {
         require(nombre.isNotEmpty()) {"El nombre del plato no puede estar vacío"}
         require(precio > 0) {"El precio del plato no puede ser menor o igual a 0"}
@@ -9,28 +9,36 @@ class Plato(nombre:String, precio:Double, tiempoPreparacion: Int, val ingredient
     }
     var nombre:String = nombre.replaceFirstChar { it -> it.uppercase() }
         set(value) {
-            require(nombre.isNotEmpty()) {"El nombre del plato no puede estar vacío"}
+            require(value.isNotEmpty()) {"El nombre del plato no puede estar vacío"}
             field = value
         }
     var precio = precio
         set(value) {
-            require(precio > 0) {"El precio del plato no puede ser menor o igual a 0"}
+            require(value > 0) {"El precio del plato no puede ser menor o igual a 0"}
             field = value
         }
     var tiempoPreparacion = tiempoPreparacion
         set(value) {
-            require(tiempoPreparacion > 1) {"El tiempo de preparacion no puede ser menor o igual a 1"}
+            require(value > 1) {"El tiempo de preparacion no puede ser menor o igual a 1"}
             field = value
         }
 
-    fun agregarIngredientes(ingrediente:String){
-        if (ingrediente.isNotEmpty()) ingredientes.addLast(ingrediente.lowercase())
+    fun agregarIngrediente(ingrediente:String){
+        if (ingrediente.isNotBlank()) ingredientes.add(ingrediente.lowercase())
         else {
-            println("El ingrediente no puede estar vacio")
+            println("No se añadió el cliente")
         }
     }
 
     override fun toString(): String {
-        return "$nombre ($tiempoPreparacion) -> ${precio}€ ($ingredientes)"
+
+        return "$nombre ($tiempoPreparacion) -> ${precio}€ (${
+            if (ingredientes.size > 1) {
+                ingredientes.dropLast(1).joinToString { ", " } + " y " + ingredientes.last()
+            } else {
+                ingredientes.joinToString(", ")
+            }
+        })"
     }
 }
+
