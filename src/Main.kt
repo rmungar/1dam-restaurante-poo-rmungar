@@ -32,7 +32,7 @@ fun main() {
     pedido1.agregarPlato(plato3)
     pedido1.agregarPlato(plato4)
 
-    println("***** Pedido ${pedido1.numero} *****")
+    println("***** Pedido ${pedido1.numeroPedido} *****")
     println(pedido1)
 
     // Simulación del proceso de los pedidos

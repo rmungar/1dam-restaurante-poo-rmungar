@@ -1,6 +1,8 @@
 package src
 
-class Pedido(val platos:MutableList<Plato>, var estado: String = "Pendiente") {
+class Pedido{
+    val platos = mutableListOf<Plato>()
+    var estado: String = "Pendiente"
     companion object{
         var numero = 0
         fun generarNumero(): Int{

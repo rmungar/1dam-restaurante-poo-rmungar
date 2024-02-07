@@ -17,12 +17,20 @@ class SistemaGestionRestaurante(private val mesas: List<Mesa>) {
             val pedido: Pedido?
             if (numeroPedido == null){
                 pedido = it.pedidos.lastOrNull()
+            }else{
+                pedido = it.pedidos.find { p -> p.numeroPedido == numeroPedido }
             }
+            pedido?.estado = "Servido"
         }
     }
 
     fun cerrarMesa(numeroMesa: Int) {
-      //TODO desarrollar este método...
+        val mesa = mesas.find { it.numero == numeroMesa }
+        mesa?.let{
+            if (it.pedidos.all { p -> p.estado == "Servido" }){
+                mesa.liberarMesa()
+            }
+        }
     }
 
     fun buscarPlatos(): List<String>? {
